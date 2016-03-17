@@ -74,7 +74,7 @@ public class ClassHelper {
 		Field[] fields = object.getClass().getDeclaredFields();
 		for (Field field : fields) {
 			String fieldName = field.getName();
-			if (!"serialVersionUID".equals(fieldName)
+			if (!"serialVersionUID".equals(fieldName) && !field.isSynthetic()
 					&& !"defaultValues".equals(fieldName)
 					&& !field.getType().equals(object.getClass())) {
 				field.setAccessible(true);
@@ -93,7 +93,7 @@ public class ClassHelper {
 			fields = object.getClass().getSuperclass().getDeclaredFields();
 			for (Field field : fields) {
 				String fieldName = field.getName();
-				if (!"serialVersionUID".equals(fieldName)
+				if (!"serialVersionUID".equals(fieldName) && !field.isSynthetic()
 						&& !"defaultValues".equals(fieldName)) {
 					field.setAccessible(true);
 					try {

@@ -5,8 +5,11 @@
 	<groupId>org.dussan.vaadin</groupId>
 	<artifactId>dcharts</artifactId>
 	<packaging>jar</packaging>
-	<version>1.7.0</version>
+	<version>1.7.2-SNAPSHOT</version>
 	<name>dCharts Widget</name>
+	<prerequisites>
+       		<maven>3.3.3</maven>
+     	</prerequisites>
 
 	<licenses>
 		<license>
@@ -30,34 +33,34 @@
 		<!-- MANIFEST.MF -->
 		<Implementation-Title>${project.name}</Implementation-Title>
 		<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-		<Implementation-Version>${project.version}-${git.version}</Implementation-Version>
+		<Implementation-Version>${project.version}</Implementation-Version>
 		<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
 		<Vaadin-Package-Version>1</Vaadin-Package-Version>
 		<Vaadin-Widgetsets>org.dussan.vaadin.dcharts.DchartsWidgetset</Vaadin-Widgetsets>
-		<Vaadin-Addon>${project.artifactId}-${project.version}-${git.version}/${project.artifactId}-${project.version}-${git.version}.jar</Vaadin-Addon>
-		<JqPlot-Version>1.0.7r1224</JqPlot-Version>
+		<Vaadin-Addon>${project.artifactId}-${project.version}/${project.artifactId}-${project.version}.jar</Vaadin-Addon>
+		<JqPlot-Version>1.0.9.d96a669</JqPlot-Version>
 		<!-- com.google -->
 		<com.google.code.maven-license-plugin.maven-license-plugin>1.4.0</com.google.code.maven-license-plugin.maven-license-plugin>
 		<!-- com.vaadin -->
-		<com.vaadin.vaadin>7.0.7</com.vaadin.vaadin>
+		<com.vaadin.vaadin>7.6.4</com.vaadin.vaadin>
 		<!-- commons -->
-		<commons-codec.commons-codec>1.7</commons-codec.commons-codec>
+		<commons-codec.commons-codec>1.10</commons-codec.commons-codec>
 		<!-- javax -->
 		<javax.servlet.servlet-api>2.4</javax.servlet.servlet-api>
 		<javax.validation.validation-api>1.0.0.GA</javax.validation.validation-api>
 		<!-- org.apache -->
-		<org.apache.commons.commons-lang3>3.1</org.apache.commons.commons-lang3>
-		<org.apache.maven.plugins.maven-antrun-plugin>1.7</org.apache.maven.plugins.maven-antrun-plugin>
-		<org.apache.maven.plugins.maven-assembly-plugin>2.3</org.apache.maven.plugins.maven-assembly-plugin>
-		<org.apache.maven.plugins.maven-clean-plugin>2.4.1</org.apache.maven.plugins.maven-clean-plugin>
-		<org.apache.maven.plugins.maven-compiler-plugin>2.3.2</org.apache.maven.plugins.maven-compiler-plugin>
-		<org.apache.maven.plugins.maven-jar-plugin>2.4</org.apache.maven.plugins.maven-jar-plugin>
+		<org.apache.commons.commons-lang3>3.4</org.apache.commons.commons-lang3>
+		<org.apache.maven.plugins.maven-antrun-plugin>1.8</org.apache.maven.plugins.maven-antrun-plugin>
+		<org.apache.maven.plugins.maven-assembly-plugin>2.6</org.apache.maven.plugins.maven-assembly-plugin>
+		<org.apache.maven.plugins.maven-clean-plugin>3.0.0</org.apache.maven.plugins.maven-clean-plugin>
+		<org.apache.maven.plugins.maven-compiler-plugin>3.5.1</org.apache.maven.plugins.maven-compiler-plugin>
+		<org.apache.maven.plugins.maven-jar-plugin>2.6</org.apache.maven.plugins.maven-jar-plugin>
 		<org.apache.maven.wagon.wagon-ftp>2.2</org.apache.maven.wagon.wagon-ftp>
 		<!-- org.codehaus.mojo -->
-		<org.codehaus.mojo.exec-maven-plugin>1.2.1</org.codehaus.mojo.exec-maven-plugin>
+		<org.codehaus.mojo.exec-maven-plugin>1.4.0</org.codehaus.mojo.exec-maven-plugin>
 		<org.codehaus.mojo.gmaven-plugin>1.0</org.codehaus.mojo.gmaven-plugin>
-		<org.codehaus.mojo.properties-maven-plugin>1.0-alpha-2</org.codehaus.mojo.properties-maven-plugin>
-		<org.codehaus.mojo.wagon-maven-plugin>1.0-beta-4</org.codehaus.mojo.wagon-maven-plugin>
+		<org.codehaus.mojo.properties-maven-plugin>1.0.0</org.codehaus.mojo.properties-maven-plugin>
+		<org.codehaus.mojo.wagon-maven-plugin>1.0</org.codehaus.mojo.wagon-maven-plugin>
 		<!-- org.mortbay.jetty -->
 		<org.mortbay.jetty.maven-jetty-plugin>6.1.26</org.mortbay.jetty.maven-jetty-plugin>
 	</properties>
@@ -141,7 +144,7 @@
 			<artifactId>commons-codec</artifactId>
 			<version>${commons-codec.commons-codec}</version>
 			<scope>compile</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -247,7 +250,7 @@
 							<goal>run</goal>
 						</goals>
 					</execution>
-					<!-- Copy web.xml to build directory if want to run application in hosted 
+					<!-- Copy web.xml to build directory if want to run application in hosted
 						mode -->
 					<execution>
 						<id>xmlCopy</id>
@@ -381,7 +384,7 @@
 				</executions>
 			</plugin>
 
-			<!-- A simple Jetty test server at http://localhost:8080/dcharts can be 
+			<!-- A simple Jetty test server at http://localhost:8080/dcharts can be
 				launched with the Maven goal jetty:run and stopped with jetty:stop -->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -395,7 +398,7 @@
 					</connectors>
 					<stopPort>9966</stopPort>
 					<stopKey>${project.artifactId}</stopKey>
-					<!-- Redeploy every x seconds if changes are detected, 0 for no automatic 
+					<!-- Redeploy every x seconds if changes are detected, 0 for no automatic
 						redeployment -->
 					<scanIntervalSeconds>1</scanIntervalSeconds>
 					<!-- make sure Jetty also finds the widgetset -->
@@ -411,7 +414,7 @@
 			</plugin>
 		</plugins>
 
-		<!-- This is needed for the sources required by the GWT compiler to be 
+		<!-- This is needed for the sources required by the GWT compiler to be
 			included in the produced JARs -->
 		<resources>
 			<resource>
@@ -463,7 +466,7 @@
 					</executions>
 				</plugin>
 
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
+				<!--This plugin's configuration is used to store Eclipse m2e settings
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
