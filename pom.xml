@@ -22,8 +22,8 @@
 	<properties>
 		<!-- general -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.source>1.6</jdk.source>
-		<jdk.target>1.6</jdk.target>
+		<jdk.source>1.8</jdk.source>
+		<jdk.target>1.8</jdk.target>
 		<!-- ftp server -->
 		<ftp.server.id>ftp.dussan.org</ftp.server.id>
 		<ftp.server.url>ftp://${ftp.server.id}</ftp.server.url>
@@ -42,11 +42,11 @@
 		<!-- com.google -->
 		<com.google.code.maven-license-plugin.maven-license-plugin>1.4.0</com.google.code.maven-license-plugin.maven-license-plugin>
 		<!-- com.vaadin -->
-		<com.vaadin.vaadin>7.6.4</com.vaadin.vaadin>
+		<com.vaadin.vaadin>8.0.0.alpha2</com.vaadin.vaadin>
 		<!-- commons -->
 		<commons-codec.commons-codec>1.10</commons-codec.commons-codec>
 		<!-- javax -->
-		<javax.servlet.servlet-api>2.4</javax.servlet.servlet-api>
+		<javax.servlet.servlet-api>3.1.0</javax.servlet.servlet-api>
 		<javax.validation.validation-api>1.0.0.GA</javax.validation.validation-api>
 		<!-- org.apache -->
 		<org.apache.commons.commons-lang3>3.4</org.apache.commons.commons-lang3>
@@ -54,11 +54,11 @@
 		<org.apache.maven.plugins.maven-assembly-plugin>2.6</org.apache.maven.plugins.maven-assembly-plugin>
 		<org.apache.maven.plugins.maven-clean-plugin>3.0.0</org.apache.maven.plugins.maven-clean-plugin>
 		<org.apache.maven.plugins.maven-compiler-plugin>3.5.1</org.apache.maven.plugins.maven-compiler-plugin>
-		<org.apache.maven.plugins.maven-jar-plugin>2.6</org.apache.maven.plugins.maven-jar-plugin>
-		<org.apache.maven.wagon.wagon-ftp>2.2</org.apache.maven.wagon.wagon-ftp>
+		<org.apache.maven.plugins.maven-jar-plugin>3.0.2</org.apache.maven.plugins.maven-jar-plugin>
+		<org.apache.maven.wagon.wagon-ftp>2.10</org.apache.maven.wagon.wagon-ftp>
 		<!-- org.codehaus.mojo -->
-		<org.codehaus.mojo.exec-maven-plugin>1.4.0</org.codehaus.mojo.exec-maven-plugin>
-		<org.codehaus.mojo.gmaven-plugin>1.0</org.codehaus.mojo.gmaven-plugin>
+		<org.codehaus.mojo.exec-maven-plugin>1.5.0</org.codehaus.mojo.exec-maven-plugin>
+		<org.codehaus.mojo.gmaven-plugin>1.5</org.codehaus.mojo.gmaven-plugin>
 		<org.codehaus.mojo.properties-maven-plugin>1.0.0</org.codehaus.mojo.properties-maven-plugin>
 		<org.codehaus.mojo.wagon-maven-plugin>1.0</org.codehaus.mojo.wagon-maven-plugin>
 		<!-- org.mortbay.jetty -->
@@ -146,8 +146,8 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
 			<version>${javax.servlet.servlet-api}</version>
 			<scope>provided</scope>
 		</dependency>
@@ -167,8 +167,8 @@
 
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.groovy.maven</groupId>
-				<artifactId>gmaven-plugin</artifactId>
+    			<groupId>org.codehaus.gmaven</groupId>
+    			<artifactId>gmaven-plugin</artifactId>
 				<version>${org.codehaus.mojo.gmaven-plugin}</version>
 				<executions>
 					<execution>
