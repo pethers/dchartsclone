@@ -42,7 +42,7 @@
 		<!-- com.google -->
 		<com.google.code.maven-license-plugin.maven-license-plugin>1.4.0</com.google.code.maven-license-plugin.maven-license-plugin>
 		<!-- com.vaadin -->
-		<com.vaadin.vaadin>8.0.0.alpha2</com.vaadin.vaadin>
+		<com.vaadin.vaadin>8.0.0.beta1</com.vaadin.vaadin>
 		<!-- commons -->
 		<commons-codec.commons-codec>1.10</commons-codec.commons-codec>
 		<!-- javax -->
