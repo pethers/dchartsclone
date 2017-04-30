@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012-2013  Dušan Vejnovič  <vaadin@dussan.org>
+ * Copyright (C) ${year}  Dušan Vejnovič  <vaadin@dussan.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,12 +71,12 @@ import org.dussan.vaadin.dcharts.renderers.tick.CanvasAxisTickRenderer;
 
 import com.vaadin.server.Page;
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.v7.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.v7.ui.VerticalLayout;
 
 public class DChartsTestUI extends UI {
 
