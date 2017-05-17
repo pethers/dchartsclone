@@ -4,7 +4,7 @@
 	<groupId>org.dussan.vaadin</groupId>
 	<artifactId>dcharts</artifactId>
 	<packaging>jar</packaging>
-	<version>2.0.0.hack23</version>
+	<version>2.0.1-SNAPSHOT</version>
 	<name>dCharts Widget</name>
 	<prerequisites>
        		<maven>3.3.3</maven>
@@ -943,7 +943,7 @@
 	<scm>
 	   <connection>scm:git:https://github.com/pethers/dchartsclone.git</connection>
 	   <developerConnection>scm:git:https://github.com/pethers/dchartsclone.git</developerConnection>
-	   <tag>dcharts-2.0.0.hack23</tag>
+	   <tag>HEAD</tag>
 	   <url>https://github.com/pethers/dchartsclone/tree/master/</url>
 	</scm>		
 
