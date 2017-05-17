@@ -926,19 +926,26 @@
 			</build>
 		</profile>
 	</profiles>
+	
+	<scm>
+	   <connection>scm:git:https://github.com/pethers/dchartsclone.git</connection>
+	   <developerConnection>scm:git:https://github.com/pethers/dchartsclone.git</developerConnection>
+	   <tag>HEAD</tag>
+	   <url>https://github.com/pethers/dchartsclone/tree/master/</url>
+	</scm>		
 
 	<distributionManagement>
 		<repository>
-			<id>repos.dussan.org</id>
+			<id>hack23.com</id>
 			<name>releases</name>
-			<url>http://repos.dussan.org/content/repositories/releases/</url>
+			<url>https://www.hack23.com/nexus/repository/maven-releases/</url>
 		</repository>
 
 		<snapshotRepository>
-			<id>repos.dussan.org</id>
+			<id>hack23.com</id>
 			<name>snapshots</name>
 			<uniqueVersion>false</uniqueVersion>
-			<url>http://repos.dussan.org/content/repositories/snapshots/</url>
+			<url>https://www.hack23.com/nexus/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
